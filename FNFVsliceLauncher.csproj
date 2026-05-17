@@ -11,6 +11,7 @@
     <UseWinUI>true</UseWinUI>
     <EnableMsixTooling>true</EnableMsixTooling>
     <Nullable>enable</Nullable>
+    <RollForwardOnNoCandidateFx>2</RollForwardOnNoCandidateFx>
   </PropertyGroup>
 
   <ItemGroup>
@@ -56,4 +57,16 @@
     <PublishTrimmed Condition="'$(Configuration)' == 'Debug'">False</PublishTrimmed>
     <PublishTrimmed Condition="'$(Configuration)' != 'Debug'">True</PublishTrimmed>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="C:\Users\tuxedo\.nuget\packages\microsoft.windowsappsdk.runtime\2.0.1\buildTransitive\..\include\WindowsAppSDK-VersionInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="C:\Users\tuxedo\.nuget\packages\microsoft.windowsappsdk.runtime\2.0.1\buildTransitive\..\include\WindowsAppSDK-VersionInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="C:\Users\tuxedo\.nuget\packages\microsoft.windowsappsdk.runtime\2.0.1\buildTransitive\..\include\WindowsAppSDK-VersionInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="C:\Users\tuxedo\.nuget\packages\microsoft.windowsappsdk.runtime\2.0.1\buildTransitive\..\include\WindowsAppSDK-VersionInfo.cs" />
+  </ItemGroup>
 </Project>

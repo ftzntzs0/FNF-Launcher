@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "vq8wYZU3EgA=",
+  "dgSpecHash": "gDam0bd7RT8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\tuxedo\\source\\repos\\FNFVsliceLauncher\\FNFVsliceLauncher\\FNF Launcher\\FNFVsliceLauncher.csproj",
+  "projectFilePath": "C:\\Users\\tuxedo\\source\\repos\\FNFVsliceLauncher\\FNFVsliceLauncher\\FNF-Launcher\\FNFVsliceLauncher.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\tuxedo\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.27\\microsoft.net.illink.tasks.8.0.27.nupkg.sha512",
     "C:\\Users\\tuxedo\\.nuget\\packages\\microsoft.web.webview2\\1.0.3719.77\\microsoft.web.webview2.1.0.3719.77.nupkg.sha512",
     "C:\\Users\\tuxedo\\.nuget\\packages\\microsoft.windows.ai.machinelearning\\2.0.300\\microsoft.windows.ai.machinelearning.2.0.300.nupkg.sha512",
     "C:\\Users\\tuxedo\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.28000.1839\\microsoft.windows.sdk.buildtools.10.0.28000.1839.nupkg.sha512",
@@ -20,6 +21,7 @@
     "C:\\Users\\tuxedo\\.nuget\\packages\\microsoft.windowsappsdk.winui\\2.0.12\\microsoft.windowsappsdk.winui.2.0.12.nupkg.sha512",
     "C:\\Users\\tuxedo\\.nuget\\packages\\system.numerics.tensors\\9.0.0\\system.numerics.tensors.9.0.0.nupkg.sha512",
     "C:\\Users\\tuxedo\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\8.0.27\\microsoft.netcore.app.runtime.win-x86.8.0.27.nupkg.sha512",
+    "C:\\Users\\tuxedo\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\8.0.27\\microsoft.netcore.app.crossgen2.win-x64.8.0.27.nupkg.sha512",
     "C:\\Users\\tuxedo\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.57\\microsoft.windows.sdk.net.ref.10.0.19041.57.nupkg.sha512",
     "C:\\Users\\tuxedo\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\8.0.27\\microsoft.aspnetcore.app.runtime.win-x86.8.0.27.nupkg.sha512",
     "C:\\Users\\tuxedo\\.nuget\\packages\\microsoft.netcore.app.runtime.win-arm64\\8.0.27\\microsoft.netcore.app.runtime.win-arm64.8.0.27.nupkg.sha512",

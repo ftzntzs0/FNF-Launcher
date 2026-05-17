@@ -10,7 +10,7 @@
     <PackageArchitecture>x64</PackageArchitecture>
     <PackageIdentityName>3074d8fd-e4e0-49f7-820f-39a0b8edb497</PackageIdentityName>
     <PackageIdentityPublisher>CN=tuxedo</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNF Launcher\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNF-Launcher\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\</IntermediateOutputPath>
     <RemoteDeploymentType>CopyToDevice</RemoteDeploymentType>
     <PackageRegistrationPath>
     </PackageRegistrationPath>
@@ -18,7 +18,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>
     </WindowsSdkPath>
-    <LayoutDir>C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNF Launcher\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppX</LayoutDir>
+    <LayoutDir>C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNF-Launcher\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppX</LayoutDir>
     <RegisteredManifestChecksum>88FE722CEF93C5ABB7521B537D09BC96062C4E7286430D8D095EBAAFD17DC6CD</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>3074d8fd-e4e0-49f7-820f-39a0b8edb497_1.0.0.0_x64__4r230p6fg3hn6</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>3074d8fd-e4e0-49f7-820f-39a0b8edb497_4r230p6fg3hn6!App</RegisteredUserModeAppID>
@@ -27,24 +27,24 @@
     <RegisteredVersion>1.0.0.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNF Launcher\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNF-Launcher\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2026-05-17T17:34:25.385</Modified>
+      <Modified>2026-05-17T19:04:05.216</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNF Launcher\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\FNFVsliceLauncher.runtimeconfig.json">
+    <AppxPackagedFile Include="C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNF-Launcher\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\FNFVsliceLauncher.runtimeconfig.json">
       <PackagePath>FNFVsliceLauncher.runtimeconfig.json</PackagePath>
-      <Modified>2026-05-17T17:34:24.051</Modified>
+      <Modified>2026-05-17T19:04:04.267</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNF Launcher\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
+    <AppxPackagedFile Include="C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNF-Launcher\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
       <PackagePath>FNFVsliceLauncher.exe</PackagePath>
-      <Modified>2026-05-17T17:34:22.646</Modified>
+      <Modified>2026-05-17T19:04:03.380</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNF Launcher\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\FNFVsliceLauncher.dll">
+    <AppxPackagedFile Include="C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNF-Launcher\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\FNFVsliceLauncher.dll">
       <PackagePath>FNFVsliceLauncher.dll</PackagePath>
-      <Modified>2026-05-17T17:34:22.624</Modified>
+      <Modified>2026-05-17T19:04:03.371</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\tuxedo\.nuget\packages\microsoft.netcore.app.runtime.win-x64\8.0.27\runtimes\win-x64\lib\net8.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -938,45 +938,45 @@
       <PackagePath>Microsoft.Web.WebView2.Core.Projection.dll</PackagePath>
       <Modified>2026-01-14T10:13:00.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNF Launcher\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\FNFVsliceLauncher.deps.json">
+    <AppxPackagedFile Include="C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNF-Launcher\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\FNFVsliceLauncher.deps.json">
       <PackagePath>FNFVsliceLauncher.deps.json</PackagePath>
-      <Modified>2026-05-17T17:34:24.040</Modified>
+      <Modified>2026-05-17T19:04:04.136</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNF Launcher\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNF-Launcher\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-      <Modified>2026-05-17T02:35:27.239</Modified>
+      <Modified>2026-05-17T18:22:06.632</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNF Launcher\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNF-Launcher\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
-      <Modified>2026-05-17T02:35:27.239</Modified>
+      <Modified>2026-05-17T18:22:06.632</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNF Launcher\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNF-Launcher\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
-      <Modified>2026-05-17T02:35:27.240</Modified>
+      <Modified>2026-05-17T18:22:06.633</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNF Launcher\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNF-Launcher\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
-      <Modified>2026-05-17T02:35:27.240</Modified>
+      <Modified>2026-05-17T18:22:06.633</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNF Launcher\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNF-Launcher\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
-      <Modified>2026-05-17T02:35:27.249</Modified>
+      <Modified>2026-05-17T18:22:06.634</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNF Launcher\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNF-Launcher\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
-      <Modified>2026-05-17T02:35:27.249</Modified>
+      <Modified>2026-05-17T18:22:06.634</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNF Launcher\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNF-Launcher\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
-      <Modified>2026-05-17T02:35:27.250</Modified>
+      <Modified>2026-05-17T18:22:06.634</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\tuxedo\.nuget\packages\microsoft.web.webview2\1.0.3719.77\build\..\lib\Microsoft.Web.WebView2.Core.winmd">
       <PackagePath>Microsoft.Web.WebView2.Core.winmd</PackagePath>
       <Modified>2026-01-14T10:12:26.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNF Launcher\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\resources.pri">
+    <AppxPackagedFile Include="C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNF-Launcher\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2026-05-17T17:34:24.198</Modified>
+      <Modified>2026-05-17T19:04:04.339</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
