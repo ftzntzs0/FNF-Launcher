@@ -29,123 +29,140 @@
                     <NavigationViewItem Content="Home" Tag="Home" Icon="Home" />
                 </NavigationView.MenuItems>
 
-
                 <Grid Padding="20">
-                <Grid x:Name="HomeGrid" Visibility="Visible">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
 
-                    <Grid Grid.Row="0" Margin="0,0,0,10">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Text="My Installed Mods" FontSize="28" FontWeight="Bold" VerticalAlignment="Center"/>
-                        <Button x:Name="RefreshButton" Grid.Column="1" Click="RefreshMods_Click" VerticalAlignment="Center" Padding="8">
-                            <SymbolIcon Symbol="Refresh"/>
-                        </Button>
+                    <Grid x:Name="HomeGrid" Visibility="Visible" Padding="16">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0" Margin="0,0,0,16">
+                            <TextBlock Text="My Installed Mods" 
+                               FontSize="28" 
+                               FontWeight="Bold" 
+                               VerticalAlignment="Center" 
+                               HorizontalAlignment="Left"/>
+
+                          <Button Content="Refresh" 
+                            Click="RefreshMods_Click" 
+                            Width="100" 
+                            VerticalAlignment="Center" 
+                            HorizontalAlignment="Right"/>
+                        </Grid>
+
+                        <TextBlock x:Name="StatusText" Grid.Row="1" VerticalAlignment="Center" Foreground="Gray" Margin="0,0,0,16"/>
+
+                        <StackPanel Grid.Row="2" Orientation="Horizontal" Spacing="16" Margin="0,0,0,16">
+                            <ComboBox x:Name="SortComboBox" SelectedIndex="0" SelectionChanged="SortComboBox_SelectionChanged" Width="150">
+                                <ComboBoxItem Content="Last Played" Tag="LastPlayed"/>
+                                <ComboBoxItem Content="Name (A - Z)" Tag="AZ"/>
+                                <ComboBoxItem Content="Name (Z - A)" Tag="ZA"/>
+                            </ComboBox>
+
+                            <AutoSuggestBox x:Name="SearchBox" 
+                        PlaceholderText="Search" 
+                        QueryIcon="Find" 
+                        Width="250" 
+                        TextChanged="SearchBox_TextChanged"/>
+                        </StackPanel>
+
+                        <GridView Grid.Row="3" x:Name="ModsGridView" SelectionMode="None">
+                            <GridView.ItemContainerTransitions>
+                                <TransitionCollection>
+                                    <AddDeleteThemeTransition />
+                                    <RepositionThemeTransition />
+                                    <EntranceThemeTransition FromHorizontalOffset="0" FromVerticalOffset="50" IsStaggeringEnabled="True" />
+                                </TransitionCollection>
+                            </GridView.ItemContainerTransitions>
+
+                            <GridView.ItemTemplate>
+                                <DataTemplate x:DataType="local:ModItem">
+                                    <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" 
+                        BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" 
+                        BorderThickness="1" CornerRadius="8" 
+                        Width="280" Height="360" Margin="10">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="220"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+
+                                            <Image Source="{x:Bind IconPath, Mode=OneWay}" Stretch="UniformToFill" 
+                               HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+
+                                            <Rectangle Grid.Row="0" Fill="{ThemeResource AccentFillColorDefaultBrush}" Opacity="0.1"/>
+
+                                            <Border Grid.Row="0" CornerRadius="8,8,0,0" 
+                                BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="0,0,0,1"/>
+
+                                            <StackPanel Grid.Row="1" Padding="15,15,15,5" Spacing="8">
+                                                <TextBlock Text="{x:Bind Title}" FontWeight="SemiBold" FontSize="16" 
+                                       TextTrimming="CharacterEllipsis" ToolTipService.ToolTip="{x:Bind Title}" TextWrapping="Wrap"/>
+
+                                                <TextBlock Text="{x:Bind Description}" TextWrapping="Wrap" TextTrimming="WordEllipsis" 
+                                       Foreground="{ThemeResource TextFillColorSecondaryBrush}" FontSize="12" Height="40"/>
+                                            </StackPanel>
+
+                                            <Button Grid.Row="2" 
+                                x:Name="PlayButton"
+                                HorizontalAlignment="Stretch" 
+                                Style="{StaticResource AccentButtonStyle}"
+                                Click="LaunchMod_Click" 
+                                Tag="{x:Bind}" 
+                                IsEnabled="{x:Bind IsPlayable, Mode=OneWay}" 
+                                Margin="15,0,15,15">
+                                                <StackPanel Orientation="Horizontal" Spacing="8">
+                                                    <SymbolIcon x:Name="PlayIcon" Symbol="{x:Bind local:MainWindow.GetIconSymbol(IsRunning), Mode=OneWay}"/>
+                                                    <TextBlock x:Name="ButtonLabel" Text="{x:Bind local:MainWindow.GetButtonLabel(IsRunning), Mode=OneWay}" VerticalAlignment="Center"/>
+                                                </StackPanel>
+                                            </Button>
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </GridView.ItemTemplate>
+                        </GridView>
                     </Grid>
 
-                    <StackPanel Grid.Row="1" Margin="0,0,0,10">
-                        <TextBlock x:Name="StatusText" Foreground="Gray" FontStyle="Italic"/>
-                    </StackPanel>
+                    <Grid x:Name="SettingsGrid" Visibility="Collapsed">
+                        <StackPanel Spacing="20" MaxWidth="600" HorizontalAlignment="Left">
+                            <TextBlock Text="Launcher Settings" FontSize="28" FontWeight="Bold" Margin="0,0,0,10"/>
 
-                    <GridView Grid.Row="2" x:Name="ModsGridView" SelectionMode="None">
-                        <GridView.ItemTemplate>
-                            <DataTemplate x:DataType="local:ModItem">
-                                <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" 
-                                        BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" 
-                                        BorderThickness="1" CornerRadius="8" 
-                                        Width="280" Height="360" Margin="10">
-                                    <Grid>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="220"/>
-                                           
-                                            <RowDefinition Height="*"/>
-                                           
-                                            <RowDefinition Height="Auto"/>
-                                       
-                                        </Grid.RowDefinitions>
+                            <StackPanel Spacing="8">
+                                <TextBlock Text="Game Path (FNF.exe)" FontWeight="SemiBold"/>
+                                <TextBlock Text="Select where the v-slice executable is installed." Foreground="Gray" FontSize="12"/>
+                                <Grid ColumnSpacing="10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBox x:Name="ExePathTextBox" IsReadOnly="True" PlaceholderText="Ex: C:\Games\FNF\FNF.exe"/>
+                                    <Button Grid.Column="1" Content="Browse .exe" Click="SelectExe_Click"/>
+                                </Grid>
+                            </StackPanel>
 
-                                        <Image Source="{x:Bind IconPath, Mode=OneWay}" Stretch="UniformToFill" 
-                                            HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                            <StackPanel Spacing="8">
+                                <TextBlock Text="Isolated Mods Folder" FontWeight="SemiBold"/>
+                                <TextBlock Text="Select the folder where your mods are stored." Foreground="Gray" FontSize="12"/>
+                                <Grid ColumnSpacing="10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBox x:Name="ModsFolderPathTextBox" IsReadOnly="True" PlaceholderText="Ex: C:\Games\FNF_Mods"/>
+                                    <Button Grid.Column="1" Content="Browse Folder" Click="SelectModsFolder_Click"/>
+                                </Grid>
+                            </StackPanel>
 
-                                        <Rectangle Grid.Row="0" Fill="{ThemeResource SystemAccentColor}" Opacity="0.1"/>
-
-                                        <Border Grid.Row="0" CornerRadius="8,8,0,0" 
-                                            BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" BorderThickness="0,0,0,1"/>
-
-                                        
-                                        <StackPanel Grid.Row="1" Padding="15,15,15,5" Spacing="8">
-                                            <TextBlock Text="{x:Bind Title}" FontWeight="SemiBold" FontSize="16" 
-                                                TextTrimming="CharacterEllipsis" ToolTipService.ToolTip="{x:Bind Title}" TextWrapping="Wrap"/>
-
-                                            <TextBlock Text="{x:Bind Description}" TextWrapping="Wrap" TextTrimming="WordEllipsis" 
-                                                  Foreground="{ThemeResource TextFillColorSecondaryBrush}" FontSize="12" Height="40"/>
-                                        </StackPanel>
-
-                                        
-                                        <Button Grid.Row="2" 
-                                            x:Name="PlayButton"
-                                            HorizontalAlignment="Stretch" 
-                                            Style="{StaticResource AccentButtonStyle}"
-                                            Click="LaunchMod_Click" 
-                                            Tag="{x:Bind}" 
-                                            IsEnabled="{x:Bind IsPlayable, Mode=OneWay}" 
-                                            Margin="15,0,15,15"
-                                            PointerEntered="PlayButton_PointerEntered"
-                                            PointerExited="PlayButton_PointerExited">
-                                            <StackPanel Orientation="Horizontal" Spacing="8">
-                                                <SymbolIcon x:Name="PlayIcon" Symbol="{x:Bind local:MainWindow.GetIconSymbol(IsRunning), Mode=OneWay}"/>
-                                                <TextBlock x:Name="ButtonLabel" Text="{x:Bind local:MainWindow.GetButtonLabel(IsRunning), Mode=OneWay}" VerticalAlignment="Center"/>
-                                            </StackPanel>
-                                        </Button>
-                                    </Grid>
-                                </Border>
-                            </DataTemplate>
-                        </GridView.ItemTemplate>
-                    </GridView>
-                </Grid>
-
-                <Grid x:Name="SettingsGrid" Visibility="Collapsed">
-                    <StackPanel Spacing="20" MaxWidth="600" HorizontalAlignment="Left">
-                        <TextBlock Text="Launcher Settings" FontSize="28" FontWeight="Bold" Margin="0,0,0,10"/>
-
-                        <StackPanel Spacing="8">
-                            <TextBlock Text="Game Path (FNF.exe)" FontWeight="SemiBold"/>
-                            <TextBlock Text="Select where the v-slice executable is installed." Foreground="Gray" FontSize="12"/>
-                            <Grid ColumnSpacing="10">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="Auto"/>
-                                </Grid.ColumnDefinitions>
-                                <TextBox x:Name="ExePathTextBox" IsReadOnly="True" PlaceholderText="Ex: C:\Games\FNF\FNF.exe"/>
-                                <Button Grid.Column="1" Content="Browse .exe" Click="SelectExe_Click"/>
-                            </Grid>
+                            <TextBlock x:Name="SettingsSaveStatusText" Foreground="Green" FontStyle="Italic"/>
                         </StackPanel>
+                    </Grid>
 
-                        <StackPanel Spacing="8">
-                            <TextBlock Text="Isolated Mods Folder" FontWeight="SemiBold"/>
-                            <TextBlock Text="Select the folder where your mods are stored." Foreground="Gray" FontSize="12"/>
-                            <Grid ColumnSpacing="10">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="Auto"/>
-                                </Grid.ColumnDefinitions>
-                                <TextBox x:Name="ModsFolderPathTextBox" IsReadOnly="True" PlaceholderText="Ex: C:\Games\FNF_Mods"/>
-                                <Button Grid.Column="1" Content="Browse Folder" Click="SelectModsFolder_Click"/>
-                            </Grid>
-                        </StackPanel>
-
-                        <TextBlock x:Name="SettingsSaveStatusText" Foreground="Green" FontStyle="Italic"/>
-                    </StackPanel>
                 </Grid>
-
-            </Grid>
-        </NavigationView>
+            </NavigationView>
         </Grid>
     </Grid>
 </Window>

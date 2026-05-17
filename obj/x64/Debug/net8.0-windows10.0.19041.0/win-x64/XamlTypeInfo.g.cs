@@ -226,7 +226,7 @@ namespace FNFVsliceLauncher.FNFVsliceLauncher_XamlTypeInfo
         
         private void InitTypeTables()
         {
-            _typeNameTable = new string[41];
+            _typeNameTable = new string[42];
             _typeNameTable[0] = "Microsoft.UI.Xaml.Controls.XamlControlsResources";
             _typeNameTable[1] = "Microsoft.UI.Xaml.ResourceDictionary";
             _typeNameTable[2] = "Object";
@@ -265,11 +265,12 @@ namespace FNFVsliceLauncher.FNFVsliceLauncher_XamlTypeInfo
             _typeNameTable[35] = "System.Collections.ObjectModel.ObservableCollection`1<FNFVsliceLauncher.ModItem>";
             _typeNameTable[36] = "System.Collections.ObjectModel.Collection`1<FNFVsliceLauncher.ModItem>";
             _typeNameTable[37] = "FNFVsliceLauncher.ModItem";
-            _typeNameTable[38] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
-            _typeNameTable[39] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
-            _typeNameTable[40] = "Int32";
+            _typeNameTable[38] = "System.DateTime";
+            _typeNameTable[39] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
+            _typeNameTable[40] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
+            _typeNameTable[41] = "Int32";
 
-            _typeTable = new global::System.Type[41];
+            _typeTable = new global::System.Type[42];
             _typeTable[0] = typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources);
             _typeTable[1] = typeof(global::Microsoft.UI.Xaml.ResourceDictionary);
             _typeTable[2] = typeof(global::System.Object);
@@ -308,9 +309,10 @@ namespace FNFVsliceLauncher.FNFVsliceLauncher_XamlTypeInfo
             _typeTable[35] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::FNFVsliceLauncher.ModItem>);
             _typeTable[36] = typeof(global::System.Collections.ObjectModel.Collection<global::FNFVsliceLauncher.ModItem>);
             _typeTable[37] = typeof(global::FNFVsliceLauncher.ModItem);
-            _typeTable[38] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
-            _typeTable[39] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
-            _typeTable[40] = typeof(global::System.Int32);
+            _typeTable[38] = typeof(global::System.DateTime);
+            _typeTable[39] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
+            _typeTable[40] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
+            _typeTable[41] = typeof(global::System.Int32);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -355,7 +357,7 @@ namespace FNFVsliceLauncher.FNFVsliceLauncher_XamlTypeInfo
         private object Activate_35_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::FNFVsliceLauncher.ModItem>(); }
         private object Activate_36_Collection() { return new global::System.Collections.ObjectModel.Collection<global::FNFVsliceLauncher.ModItem>(); }
         private object Activate_37_ModItem() { return new global::FNFVsliceLauncher.ModItem(); }
-        private object Activate_38_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
+        private object Activate_39_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
         private void StaticInitializer_0_XamlControlsResources() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources).TypeHandle);
         private void StaticInitializer_4_MicaBackdrop() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Media.MicaBackdrop).TypeHandle);
         private void StaticInitializer_6_MicaKind() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Composition.SystemBackdrops.MicaKind).TypeHandle);
@@ -377,8 +379,9 @@ namespace FNFVsliceLauncher.FNFVsliceLauncher_XamlTypeInfo
         private void StaticInitializer_35_ObservableCollection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.ObservableCollection<global::FNFVsliceLauncher.ModItem>).TypeHandle);
         private void StaticInitializer_36_Collection() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.ObjectModel.Collection<global::FNFVsliceLauncher.ModItem>).TypeHandle);
         private void StaticInitializer_37_ModItem() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::FNFVsliceLauncher.ModItem).TypeHandle);
-        private void StaticInitializer_38_TreeViewNode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode).TypeHandle);
-        private void StaticInitializer_39_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>).TypeHandle);
+        private void StaticInitializer_38_DateTime() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.DateTime).TypeHandle);
+        private void StaticInitializer_39_TreeViewNode() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode).TypeHandle);
+        private void StaticInitializer_40_IList() => global::System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>).TypeHandle);
         private void MapAdd_0_XamlControlsResources(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.Object, global::System.Object>)instance;
@@ -404,7 +407,7 @@ namespace FNFVsliceLauncher.FNFVsliceLauncher_XamlTypeInfo
             var newItem = (global::FNFVsliceLauncher.ModItem)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_39_IList(object instance, object item)
+        private void VectorAdd_40_IList(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Microsoft.UI.Xaml.Controls.TreeViewNode>)instance;
             var newItem = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)item;
@@ -702,6 +705,7 @@ namespace FNFVsliceLauncher.FNFVsliceLauncher_XamlTypeInfo
                 userType.AddMemberName("FolderName");
                 userType.AddMemberName("Title");
                 userType.AddMemberName("Description");
+                userType.AddMemberName("LastPlayed");
                 userType.AddMemberName("IconPath");
                 userType.AddMemberName("IsPlayable");
                 userType.AddMemberName("IsRunning");
@@ -709,10 +713,17 @@ namespace FNFVsliceLauncher.FNFVsliceLauncher_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 38:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
+            case 38:   //  System.DateTime
+                userType = new global::FNFVsliceLauncher.FNFVsliceLauncher_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
+                userType.StaticInitializer = StaticInitializer_38_DateTime;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 39:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
                 userType = new global::FNFVsliceLauncher.FNFVsliceLauncher_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_38_TreeViewNode;
-                userType.StaticInitializer = StaticInitializer_38_TreeViewNode;
+                userType.Activator = Activate_39_TreeViewNode;
+                userType.StaticInitializer = StaticInitializer_39_TreeViewNode;
                 userType.AddMemberName("Children");
                 userType.AddMemberName("Content");
                 userType.AddMemberName("Depth");
@@ -724,15 +735,15 @@ namespace FNFVsliceLauncher.FNFVsliceLauncher_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 39:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
+            case 40:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
                 userType = new global::FNFVsliceLauncher.FNFVsliceLauncher_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.StaticInitializer = StaticInitializer_39_IList;
-                userType.CollectionAdd = VectorAdd_39_IList;
+                userType.StaticInitializer = StaticInitializer_40_IList;
+                userType.CollectionAdd = VectorAdd_40_IList;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 40:   //  Int32
+            case 41:   //  Int32
                 xamlType = new global::FNFVsliceLauncher.FNFVsliceLauncher_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }
@@ -1299,82 +1310,92 @@ namespace FNFVsliceLauncher.FNFVsliceLauncher_XamlTypeInfo
             var that = (global::FNFVsliceLauncher.ModItem)instance;
             that.Description = (global::System.String)Value;
         }
-        private object get_54_ModItem_IconPath(object instance)
+        private object get_54_ModItem_LastPlayed(object instance)
+        {
+            var that = (global::FNFVsliceLauncher.ModItem)instance;
+            return that.LastPlayed;
+        }
+        private void set_54_ModItem_LastPlayed(object instance, object Value)
+        {
+            var that = (global::FNFVsliceLauncher.ModItem)instance;
+            that.LastPlayed = (global::System.DateTime)Value;
+        }
+        private object get_55_ModItem_IconPath(object instance)
         {
             var that = (global::FNFVsliceLauncher.ModItem)instance;
             return that.IconPath;
         }
-        private void set_54_ModItem_IconPath(object instance, object Value)
+        private void set_55_ModItem_IconPath(object instance, object Value)
         {
             var that = (global::FNFVsliceLauncher.ModItem)instance;
             that.IconPath = (global::System.String)Value;
         }
-        private object get_55_ModItem_IsPlayable(object instance)
+        private object get_56_ModItem_IsPlayable(object instance)
         {
             var that = (global::FNFVsliceLauncher.ModItem)instance;
             return that.IsPlayable;
         }
-        private void set_55_ModItem_IsPlayable(object instance, object Value)
+        private void set_56_ModItem_IsPlayable(object instance, object Value)
         {
             var that = (global::FNFVsliceLauncher.ModItem)instance;
             that.IsPlayable = (global::System.Boolean)Value;
         }
-        private object get_56_ModItem_IsRunning(object instance)
+        private object get_57_ModItem_IsRunning(object instance)
         {
             var that = (global::FNFVsliceLauncher.ModItem)instance;
             return that.IsRunning;
         }
-        private void set_56_ModItem_IsRunning(object instance, object Value)
+        private void set_57_ModItem_IsRunning(object instance, object Value)
         {
             var that = (global::FNFVsliceLauncher.ModItem)instance;
             that.IsRunning = (global::System.Boolean)Value;
         }
-        private object get_57_TreeViewNode_Children(object instance)
+        private object get_58_TreeViewNode_Children(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Children;
         }
-        private object get_58_TreeViewNode_Content(object instance)
+        private object get_59_TreeViewNode_Content(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Content;
         }
-        private void set_58_TreeViewNode_Content(object instance, object Value)
+        private void set_59_TreeViewNode_Content(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.Content = (global::System.Object)Value;
         }
-        private object get_59_TreeViewNode_Depth(object instance)
+        private object get_60_TreeViewNode_Depth(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Depth;
         }
-        private object get_60_TreeViewNode_HasChildren(object instance)
+        private object get_61_TreeViewNode_HasChildren(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.HasChildren;
         }
-        private object get_61_TreeViewNode_HasUnrealizedChildren(object instance)
+        private object get_62_TreeViewNode_HasUnrealizedChildren(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.HasUnrealizedChildren;
         }
-        private void set_61_TreeViewNode_HasUnrealizedChildren(object instance, object Value)
+        private void set_62_TreeViewNode_HasUnrealizedChildren(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.HasUnrealizedChildren = (global::System.Boolean)Value;
         }
-        private object get_62_TreeViewNode_IsExpanded(object instance)
+        private object get_63_TreeViewNode_IsExpanded(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.IsExpanded;
         }
-        private void set_62_TreeViewNode_IsExpanded(object instance, object Value)
+        private void set_63_TreeViewNode_IsExpanded(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.IsExpanded = (global::System.Boolean)Value;
         }
-        private object get_63_TreeViewNode_Parent(object instance)
+        private object get_64_TreeViewNode_Parent(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Parent;
@@ -1760,68 +1781,74 @@ namespace FNFVsliceLauncher.FNFVsliceLauncher_XamlTypeInfo
                 xamlMember.Getter = get_53_ModItem_Description;
                 xamlMember.Setter = set_53_ModItem_Description;
                 break;
+            case "FNFVsliceLauncher.ModItem.LastPlayed":
+                userType = (global::FNFVsliceLauncher.FNFVsliceLauncher_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FNFVsliceLauncher.ModItem");
+                xamlMember = new global::FNFVsliceLauncher.FNFVsliceLauncher_XamlTypeInfo.XamlMember(this, "LastPlayed", "System.DateTime");
+                xamlMember.Getter = get_54_ModItem_LastPlayed;
+                xamlMember.Setter = set_54_ModItem_LastPlayed;
+                break;
             case "FNFVsliceLauncher.ModItem.IconPath":
                 userType = (global::FNFVsliceLauncher.FNFVsliceLauncher_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FNFVsliceLauncher.ModItem");
                 xamlMember = new global::FNFVsliceLauncher.FNFVsliceLauncher_XamlTypeInfo.XamlMember(this, "IconPath", "String");
-                xamlMember.Getter = get_54_ModItem_IconPath;
-                xamlMember.Setter = set_54_ModItem_IconPath;
+                xamlMember.Getter = get_55_ModItem_IconPath;
+                xamlMember.Setter = set_55_ModItem_IconPath;
                 break;
             case "FNFVsliceLauncher.ModItem.IsPlayable":
                 userType = (global::FNFVsliceLauncher.FNFVsliceLauncher_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FNFVsliceLauncher.ModItem");
                 xamlMember = new global::FNFVsliceLauncher.FNFVsliceLauncher_XamlTypeInfo.XamlMember(this, "IsPlayable", "Boolean");
-                xamlMember.Getter = get_55_ModItem_IsPlayable;
-                xamlMember.Setter = set_55_ModItem_IsPlayable;
+                xamlMember.Getter = get_56_ModItem_IsPlayable;
+                xamlMember.Setter = set_56_ModItem_IsPlayable;
                 break;
             case "FNFVsliceLauncher.ModItem.IsRunning":
                 userType = (global::FNFVsliceLauncher.FNFVsliceLauncher_XamlTypeInfo.XamlUserType)GetXamlTypeByName("FNFVsliceLauncher.ModItem");
                 xamlMember = new global::FNFVsliceLauncher.FNFVsliceLauncher_XamlTypeInfo.XamlMember(this, "IsRunning", "Boolean");
-                xamlMember.Getter = get_56_ModItem_IsRunning;
-                xamlMember.Setter = set_56_ModItem_IsRunning;
+                xamlMember.Getter = get_57_ModItem_IsRunning;
+                xamlMember.Setter = set_57_ModItem_IsRunning;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Children":
                 userType = (global::FNFVsliceLauncher.FNFVsliceLauncher_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::FNFVsliceLauncher.FNFVsliceLauncher_XamlTypeInfo.XamlMember(this, "Children", "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>");
-                xamlMember.Getter = get_57_TreeViewNode_Children;
+                xamlMember.Getter = get_58_TreeViewNode_Children;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Content":
                 userType = (global::FNFVsliceLauncher.FNFVsliceLauncher_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::FNFVsliceLauncher.FNFVsliceLauncher_XamlTypeInfo.XamlMember(this, "Content", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_58_TreeViewNode_Content;
-                xamlMember.Setter = set_58_TreeViewNode_Content;
+                xamlMember.Getter = get_59_TreeViewNode_Content;
+                xamlMember.Setter = set_59_TreeViewNode_Content;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Depth":
                 userType = (global::FNFVsliceLauncher.FNFVsliceLauncher_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::FNFVsliceLauncher.FNFVsliceLauncher_XamlTypeInfo.XamlMember(this, "Depth", "Int32");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_59_TreeViewNode_Depth;
+                xamlMember.Getter = get_60_TreeViewNode_Depth;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.HasChildren":
                 userType = (global::FNFVsliceLauncher.FNFVsliceLauncher_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::FNFVsliceLauncher.FNFVsliceLauncher_XamlTypeInfo.XamlMember(this, "HasChildren", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_60_TreeViewNode_HasChildren;
+                xamlMember.Getter = get_61_TreeViewNode_HasChildren;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.HasUnrealizedChildren":
                 userType = (global::FNFVsliceLauncher.FNFVsliceLauncher_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::FNFVsliceLauncher.FNFVsliceLauncher_XamlTypeInfo.XamlMember(this, "HasUnrealizedChildren", "Boolean");
-                xamlMember.Getter = get_61_TreeViewNode_HasUnrealizedChildren;
-                xamlMember.Setter = set_61_TreeViewNode_HasUnrealizedChildren;
+                xamlMember.Getter = get_62_TreeViewNode_HasUnrealizedChildren;
+                xamlMember.Setter = set_62_TreeViewNode_HasUnrealizedChildren;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.IsExpanded":
                 userType = (global::FNFVsliceLauncher.FNFVsliceLauncher_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::FNFVsliceLauncher.FNFVsliceLauncher_XamlTypeInfo.XamlMember(this, "IsExpanded", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_62_TreeViewNode_IsExpanded;
-                xamlMember.Setter = set_62_TreeViewNode_IsExpanded;
+                xamlMember.Getter = get_63_TreeViewNode_IsExpanded;
+                xamlMember.Setter = set_63_TreeViewNode_IsExpanded;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Parent":
                 userType = (global::FNFVsliceLauncher.FNFVsliceLauncher_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::FNFVsliceLauncher.FNFVsliceLauncher_XamlTypeInfo.XamlMember(this, "Parent", "Microsoft.UI.Xaml.Controls.TreeViewNode");
-                xamlMember.Getter = get_63_TreeViewNode_Parent;
+                xamlMember.Getter = get_64_TreeViewNode_Parent;
                 xamlMember.SetIsReadOnly();
                 break;
             }

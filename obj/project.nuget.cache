@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bEUxRbGBrqg=",
+  "dgSpecHash": "vq8wYZU3EgA=",
   "success": true,
-  "projectFilePath": "C:\\Users\\tuxedo\\source\\repos\\FNFVsliceLauncher\\FNFVsliceLauncher\\FNFVsliceLauncher.csproj",
+  "projectFilePath": "C:\\Users\\tuxedo\\source\\repos\\FNFVsliceLauncher\\FNFVsliceLauncher\\FNF Launcher\\FNFVsliceLauncher.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tuxedo\\.nuget\\packages\\microsoft.web.webview2\\1.0.3719.77\\microsoft.web.webview2.1.0.3719.77.nupkg.sha512",
     "C:\\Users\\tuxedo\\.nuget\\packages\\microsoft.windows.ai.machinelearning\\2.0.300\\microsoft.windows.ai.machinelearning.2.0.300.nupkg.sha512",
