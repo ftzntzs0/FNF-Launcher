@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
@@ -68,5 +68,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="C:\Users\tuxedo\.nuget\packages\microsoft.windowsappsdk.runtime\2.0.1\buildTransitive\..\include\WindowsAppSDK-VersionInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".github\workflows\build-and-release.yml" />
   </ItemGroup>
 </Project>

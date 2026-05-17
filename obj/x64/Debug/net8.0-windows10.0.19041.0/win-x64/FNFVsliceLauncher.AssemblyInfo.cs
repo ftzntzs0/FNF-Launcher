@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FNFVsliceLauncher")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fb41de28169cea597cb681b8de93da3ca776125b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2e8f26c93d4401af0c9c87f5d60db258ddc99a05")]
 [assembly: System.Reflection.AssemblyProductAttribute("FNFVsliceLauncher")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FNFVsliceLauncher")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

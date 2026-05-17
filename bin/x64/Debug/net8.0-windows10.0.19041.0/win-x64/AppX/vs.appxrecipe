@@ -30,21 +30,21 @@
     <AppXManifest Include="C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNF-Launcher\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2026-05-17T19:04:05.216</Modified>
+      <Modified>2026-05-17T19:32:31.742</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNF-Launcher\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\FNFVsliceLauncher.runtimeconfig.json">
       <PackagePath>FNFVsliceLauncher.runtimeconfig.json</PackagePath>
-      <Modified>2026-05-17T19:04:04.267</Modified>
+      <Modified>2026-05-17T19:32:31.072</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNF-Launcher\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
       <PackagePath>FNFVsliceLauncher.exe</PackagePath>
-      <Modified>2026-05-17T19:04:03.380</Modified>
+      <Modified>2026-05-17T19:32:30.573</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNF-Launcher\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\FNFVsliceLauncher.dll">
       <PackagePath>FNFVsliceLauncher.dll</PackagePath>
-      <Modified>2026-05-17T19:04:03.371</Modified>
+      <Modified>2026-05-17T19:32:30.553</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\tuxedo\.nuget\packages\microsoft.netcore.app.runtime.win-x64\8.0.27\runtimes\win-x64\lib\net8.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -940,7 +940,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNF-Launcher\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\FNFVsliceLauncher.deps.json">
       <PackagePath>FNFVsliceLauncher.deps.json</PackagePath>
-      <Modified>2026-05-17T19:04:04.136</Modified>
+      <Modified>2026-05-17T19:32:31.063</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNF-Launcher\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -976,7 +976,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNF-Launcher\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2026-05-17T19:04:04.339</Modified>
+      <Modified>2026-05-17T19:32:31.166</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
