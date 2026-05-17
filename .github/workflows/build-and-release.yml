@@ -45,8 +45,20 @@ jobs:
         env:
           CERTIFICATE_PASSWORD: ${{ secrets.CERTIFICATE_PASSWORD }}
         run: |
-          $msixPath = "bin\Release\net8.0-windows10.0.19041.0\win-x64\AppX\*.msix"
-          $files = Get-Item -Path $msixPath -ErrorAction SilentlyContinue
+          # Tentar encontrar o MSIX em diferentes locais possíveis
+          $possiblePaths = @(
+            "bin\x64\Release\net8.0-windows10.0.19041.0\win-x64\AppX\*.msix",
+            "bin\Release\net8.0-windows10.0.19041.0\win-x64\AppX\*.msix"
+          )
+
+          $files = $null
+          foreach ($path in $possiblePaths) {
+            $files = Get-Item -Path $path -ErrorAction SilentlyContinue
+            if ($files) {
+              Write-Host "MSIX encontrado em: $path"
+              break
+            }
+          }
 
           if ($files) {
             foreach ($file in $files) {
@@ -59,13 +71,15 @@ jobs:
               & $signToolPath sign /fd SHA256 /f "C:\temp\certificate.pfx" /p "$env:CERTIFICATE_PASSWORD" /t "http://timestamp.digicert.com" "$($file.FullName)"
             }
           } else {
-            Write-Host "Nenhum MSIX encontrado em: $msixPath"
-            Get-ChildItem -Path "bin\Release\net8.0-windows10.0.19041.0\" -Recurse -Filter "*.msix" | ForEach-Object { Write-Host "Encontrado: $_" }
+            Write-Host "Nenhum MSIX encontrado nas localizações esperadas"
+            Get-ChildItem -Path "bin\" -Recurse -Filter "*.msix" | ForEach-Object { Write-Host "Encontrado: $_" }
           }
 
       - name: Upload MSIX as artifact
         uses: actions/upload-artifact@v4
         with:
           name: fnf-launcher-x64
-          path: bin/Release/net8.0-windows10.0.19041.0/win-x64/AppX/*.msix
+          path: |
+            bin/x64/Release/net8.0-windows10.0.19041.0/win-x64/AppX/*.msix
+            bin/Release/net8.0-windows10.0.19041.0/win-x64/AppX/*.msix
 
