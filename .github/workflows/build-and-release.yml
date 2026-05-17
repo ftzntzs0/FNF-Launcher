@@ -22,15 +22,16 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore
 
+      # Adicionada a flag GenerateAppxPackageOnBuild=true para GARANTIR a cria√ß√£o do MSIX
       - name: Build MSIX for x64
-        run: dotnet publish -c Release -p:Platform=x64 -p:RuntimeIdentifier=win-x64 -p:PublishReadyToRun=false --no-restore
+        run: dotnet publish -c Release -p:Platform=x64 -p:RuntimeIdentifier=win-x64 -p:PublishReadyToRun=false -p:GenerateAppxPackageOnBuild=true --no-restore
 
       - name: Decode and import certificate
         env:
           CERTIFICATE_BASE64: ${{ secrets.SIGNING_CERTIFICATE }}
           CERTIFICATE_PASSWORD: ${{ secrets.CERTIFICATE_PASSWORD }}
         run: |
-          # Criar pasta tempor·ria para o certificado
+          # Criar pasta tempor√°ria para o certificado
           $certPath = "C:\temp\certificate.pfx"
           New-Item -ItemType Directory -Path "C:\temp" -Force | Out-Null
 
@@ -41,45 +42,44 @@ jobs:
           $cert = Import-PfxCertificate -FilePath $certPath -CertStoreLocation "Cert:\CurrentUser\My" -Password (ConvertTo-SecureString $env:CERTIFICATE_PASSWORD -AsPlainText -Force)
           echo "CERTIFICATE_THUMBPRINT=$($cert.Thumbprint)" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
 
-      - name: Sign MSIX packages
+      - name: Find, Sign and Prepare MSIX
         env:
           CERTIFICATE_PASSWORD: ${{ secrets.CERTIFICATE_PASSWORD }}
         run: |
-          # Tentar encontrar o MSIX em diferentes locais possÌveis
-          $possiblePaths = @(
-            "bin\x64\Release\net8.0-windows10.0.19041.0\win-x64\AppX\*.msix",
-            "bin\Release\net8.0-windows10.0.19041.0\win-x64\AppX\*.msix"
-          )
+          # 1. Procura o arquivo .msix recursivamente em toda a pasta do projeto
+          $msixFiles = Get-ChildItem -Path .\ -Recurse -Filter "*.msix"
 
-          $files = $null
-          foreach ($path in $possiblePaths) {
-            $files = Get-Item -Path $path -ErrorAction SilentlyContinue
-            if ($files) {
-              Write-Host "MSIX encontrado em: $path"
-              break
-            }
+          if ($msixFiles.Count -eq 0) {
+            Write-Error "Nenhum arquivo .msix foi gerado! Verifique os logs de compila√ß√£o do .NET."
+            exit 1
           }
 
-          if ($files) {
-            foreach ($file in $files) {
-              Write-Host "Signing: $($file.FullName)"
-              $signToolPath = "C:\Program Files (x86)\Windows Kits\10\bin\10.0.22621.0\x64\signtool.exe"
-              if (-not (Test-Path $signToolPath)) {
-                # Fallback para vers„o padr„o se a especÌfica n„o existir
-                $signToolPath = "signtool.exe"
-              }
-              & $signToolPath sign /fd SHA256 /f "C:\temp\certificate.pfx" /p "$env:CERTIFICATE_PASSWORD" /t "http://timestamp.digicert.com" "$($file.FullName)"
-            }
-          } else {
-            Write-Host "Nenhum MSIX encontrado nas localizaÁıes esperadas"
-            Get-ChildItem -Path "bin\" -Recurse -Filter "*.msix" | ForEach-Object { Write-Host "Encontrado: $_" }
+          # 2. Cria uma pasta centralizada para facilitar o upload depois
+          New-Item -ItemType Directory -Path ".\MsixOutput" -Force | Out-Null
+
+          # 3. Localiza dinamicamente a vers√£o mais recente do signtool instalada no runner
+          $signToolPath = (Get-ChildItem "C:\Program Files (x86)\Windows Kits\10\bin\*\x64\signtool.exe" | Sort-Object FullName -Descending | Select-Object -First 1).FullName
+          
+          if (-not $signToolPath) {
+             Write-Error "signtool.exe n√£o encontrado no ambiente!"
+             exit 1
+          }
+
+          # 4. Assina e copia os arquivos encontrados
+          foreach ($file in $msixFiles) {
+            Write-Host "Encontrado MSIX em: $($file.FullName)"
+            Write-Host "Assinando..."
+            
+            & $signToolPath sign /fd SHA256 /f "C:\temp\certificate.pfx" /p "$env:CERTIFICATE_PASSWORD" /t "http://timestamp.digicert.com" "$($file.FullName)"
+            
+            # Copia para a pasta de output limpa
+            Copy-Item -Path $file.FullName -Destination ".\MsixOutput\"
+            Write-Host "Movido para a pasta MsixOutput."
           }
 
       - name: Upload MSIX as artifact
         uses: actions/upload-artifact@v4
         with:
           name: fnf-launcher-x64
-          path: |
-            bin/x64/Release/net8.0-windows10.0.19041.0/win-x64/AppX/*.msix
-            bin/Release/net8.0-windows10.0.19041.0/win-x64/AppX/*.msix
-
+          # Agora o upload pega o arquivo direto da pasta que criamos, sem erros de caminho!
+          path: MsixOutput/*.msix
