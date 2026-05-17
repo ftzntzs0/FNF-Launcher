@@ -1,0 +1,1 @@
+C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNFVsliceLauncher.csproj;x64

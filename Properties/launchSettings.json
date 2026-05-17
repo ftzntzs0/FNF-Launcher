@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "FNFVsliceLauncher (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "FNFVsliceLauncher (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
