@@ -5,6 +5,8 @@
   </PropertyGroup>
   <PropertyGroup>
     <ActiveDebugProfile>FNFVsliceLauncher (Package)</ActiveDebugProfile>
+    <AppIconSource>D:\tralha\fnf-8.1\assets\images\charSelect\bfChill.png</AppIconSource>
+    <PackageLogoSource>D:\tralha\fnf-8.1\assets\images\charSelect\bfChill.png</PackageLogoSource>
   </PropertyGroup>
   <ItemGroup>
     <None Update="App.xaml">

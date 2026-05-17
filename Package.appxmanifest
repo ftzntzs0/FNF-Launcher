@@ -15,8 +15,8 @@
   <mp:PhoneIdentity PhoneProductId="3074d8fd-e4e0-49f7-820f-39a0b8edb497" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>FNFVsliceLauncher</DisplayName>
-    <PublisherDisplayName>tuxedo</PublisherDisplayName>
+    <DisplayName>FNF Launcher</DisplayName>
+    <PublisherDisplayName>Feentzs</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
