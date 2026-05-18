@@ -1,7 +1,7 @@
 {
-  "version": 3,
+  "version": 4,
   "targets": {
-    "net8.0-windows10.0.19041": {
+    "net8.0-windows10.0.19041.0": {
       "Microsoft.Web.WebView2/1.0.3719.77": {
         "type": "package",
         "build": {
@@ -391,7 +391,7 @@
         }
       }
     },
-    "net8.0-windows10.0.19041/win-arm64": {
+    "net8.0-windows10.0.19041.0/win-arm64": {
       "Microsoft.Web.WebView2/1.0.3719.77": {
         "type": "package",
         "native": {
@@ -711,7 +711,7 @@
         }
       }
     },
-    "net8.0-windows10.0.19041/win-x64": {
+    "net8.0-windows10.0.19041.0/win-x64": {
       "Microsoft.Web.WebView2/1.0.3719.77": {
         "type": "package",
         "native": {
@@ -1031,7 +1031,7 @@
         }
       }
     },
-    "net8.0-windows10.0.19041/win-x86": {
+    "net8.0-windows10.0.19041.0/win-x86": {
       "Microsoft.Web.WebView2/1.0.3719.77": {
         "type": "package",
         "native": {
@@ -3276,29 +3276,29 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net8.0-windows10.0.19041": [
+    "net8.0-windows10.0.19041.0": [
       "Microsoft.Windows.SDK.BuildTools >= 10.0.28000.1839",
       "Microsoft.WindowsAppSDK >= 2.0.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tuxedo\\.nuget\\packages\\": {},
+    "C:\\Users\\ftz\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tuxedo\\source\\repos\\FNFVsliceLauncher\\FNFVsliceLauncher\\FNF-Launcher\\FNFVsliceLauncher.csproj",
+      "projectUniqueName": "C:\\Users\\ftz\\Documents\\FNF-Launcher\\FNFVsliceLauncher.csproj",
       "projectName": "FNFVsliceLauncher",
-      "projectPath": "C:\\Users\\tuxedo\\source\\repos\\FNFVsliceLauncher\\FNFVsliceLauncher\\FNF-Launcher\\FNFVsliceLauncher.csproj",
-      "packagesPath": "C:\\Users\\tuxedo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tuxedo\\source\\repos\\FNFVsliceLauncher\\FNFVsliceLauncher\\FNF-Launcher\\obj\\",
+      "projectPath": "C:\\Users\\ftz\\Documents\\FNF-Launcher\\FNFVsliceLauncher.csproj",
+      "packagesPath": "C:\\Users\\ftz\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ftz\\Documents\\FNF-Launcher\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\tuxedo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ftz\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3310,7 +3310,8 @@
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net8.0-windows10.0.19041": {
+        "net8.0-windows10.0.19041.0": {
+          "framework": "net8.0-windows10.0.19041",
           "targetAlias": "net8.0-windows10.0.19041.0",
           "projectReferences": {}
         }
@@ -3325,10 +3326,11 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "10.0.300"
     },
     "frameworks": {
-      "net8.0-windows10.0.19041": {
+      "net8.0-windows10.0.19041.0": {
+        "framework": "net8.0-windows10.0.19041",
         "targetAlias": "net8.0-windows10.0.19041.0",
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": {
@@ -3401,7 +3403,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.314/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

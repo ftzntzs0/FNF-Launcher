@@ -1,1 +1,1 @@
-C:\Users\tuxedo\source\repos\FNFVsliceLauncher\FNFVsliceLauncher\FNF-Launcher\FNFVsliceLauncher.csproj;x64
+C:\Users\ftz\Documents\FNF-Launcher\FNFVsliceLauncher.csproj;x64

@@ -237,29 +237,80 @@ namespace FNFVsliceLauncher
             {
                 allLoadedModsList.Clear();
                 string modsDir = ModsFolderPathTextBox.Text;
-                if (string.IsNullOrWhiteSpace(modsDir) || !Directory.Exists(modsDir)) { StatusText.Text = "Mods folder not configured or invalid."; return; }
+
+                if (string.IsNullOrWhiteSpace(modsDir) || !Directory.Exists(modsDir))
+                {
+                    StatusText.Text = "Mods folder not configured or invalid.";
+                    return;
+                }
+
                 StatusText.Text = "Searching for mods...";
-                string[] directories = Directory.GetDirectories(modsDir);
+                string[] directories;
+
+                try
+                {
+                    directories = Directory.GetDirectories(modsDir);
+                }
+                catch (Exception ex)
+                {
+                    StatusText.Text = $"Error reading mods directory: {ex.Message}";
+                    return;
+                }
+
                 foreach (string dir in directories)
                 {
-                    string metaFilePath = Path.Combine(dir, "_polymod_meta.json"); string iconFilePath = Path.Combine(dir, "_polymod_icon.png");
+                    string metaFilePath = Path.Combine(dir, "_polymod_meta.json");
+                    string iconFilePath = Path.Combine(dir, "_polymod_icon.png");
+
                     if (File.Exists(metaFilePath))
                     {
                         try
                         {
-                            string jsonContent = await File.ReadAllTextAsync(metaFilePath); var meta = JsonSerializer.Deserialize<PolymodMeta>(jsonContent);
-                            string iconPath = null; if (File.Exists(iconFilePath)) iconPath = $"file:///{iconFilePath}";
-                            string folderName = new DirectoryInfo(dir).Name; long lastPlayedTicks = 0;
-                            if (localSettings.Values[$"LastPlayed_{folderName}"] is long savedTicks) lastPlayedTicks = savedTicks;
-                            allLoadedModsList.Add(new ModItem { FolderPath = dir, FolderName = folderName, Title = meta?.title ?? "Untitled Mod", Description = meta?.description ?? "No description.", IconPath = iconPath, LastPlayed = new DateTime(lastPlayedTicks) });
+                            string jsonContent = await File.ReadAllTextAsync(metaFilePath);
+                            var meta = JsonSerializer.Deserialize<PolymodMeta>(jsonContent);
+
+                            string iconPath = "ms-appx:///Assets/Square44x44Logo.png";
+
+                            if (File.Exists(iconFilePath))
+                            {
+                                iconPath = $"file:///{iconFilePath.Replace('\\', '/')}";
+                            }
+
+                            string folderName = new DirectoryInfo(dir).Name;
+                            long lastPlayedTicks = 0;
+
+                            if (localSettings.Values[$"LastPlayed_{folderName}"] is long savedTicks)
+                                lastPlayedTicks = savedTicks;
+
+                            allLoadedModsList.Add(new ModItem
+                            {
+                                FolderPath = dir,
+                                FolderName = folderName,
+                                Title = meta?.title ?? "Untitled Mod",
+                                Description = meta?.description ?? "No description.",
+                                IconPath = iconPath,
+                                LastPlayed = new DateTime(lastPlayedTicks)
+                            });
                         }
-                        catch (Exception ex) { Debug.WriteLine($"Error reading {dir}: {ex.Message}"); }
+                        catch (JsonException jsonEx)
+                        {
+                           
+                            Debug.WriteLine($"JSON Error reading {dir}: {jsonEx.Message}");
+                        }
+                        catch (Exception ex)
+                        {
+                            Debug.WriteLine($"Error reading {dir}: {ex.Message}");
+                        }
                     }
                 }
                 StatusText.Text = $"{allLoadedModsList.Count} mods ready to play.";
                 ApplySorting();
             }
-            catch (Exception ex) { Debug.WriteLine($"Error loading mods: {ex.Message}"); StatusText.Text = $"Error: {ex.Message}"; }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Critical Error loading mods: {ex.Message}");
+                StatusText.Text = $"Critical Error: {ex.Message}";
+            }
         }
 
         private async void LaunchMod_Click(object sender, RoutedEventArgs e)
@@ -290,37 +341,75 @@ namespace FNFVsliceLauncher
 
         private async Task RunModAsync(ModItem mod, string gameExePath)
         {
-            string gameDirectory = Path.GetDirectoryName(gameExePath); string gameModsFolder = Path.Combine(gameDirectory, "mods");
-            string targetModPath = Path.Combine(gameModsFolder, mod.FolderName); string originalModPath = mod.FolderPath;
+            string gameDirectory = Path.GetDirectoryName(gameExePath);
+            string gameModsFolder = Path.Combine(gameDirectory, "mods");
+            string targetModPath = Path.Combine(gameModsFolder, mod.FolderName);
+            string originalModPath = mod.FolderPath;
 
             mod.LastPlayed = DateTime.Now;
             localSettings.Values[$"LastPlayed_{mod.FolderName}"] = mod.LastPlayed.Ticks;
 
-            
             ApplySorting();
 
-            mod.IsPlayable = false; mod.IsRunning = true;
+            mod.IsPlayable = false;
+            mod.IsRunning = true;
             StatusText.Text = $"Moving and starting {mod.Title}...";
+
             try
             {
-                if (!Directory.Exists(gameModsFolder)) Directory.CreateDirectory(gameModsFolder);
-                if (Directory.Exists(targetModPath)) { StatusText.Text = "Error: Mod name already exists in game folder."; mod.IsPlayable = true; mod.IsRunning = false; return; }
+                if (!Directory.Exists(gameModsFolder))
+                    Directory.CreateDirectory(gameModsFolder);
+
+                if (Directory.Exists(targetModPath))
+                {
+                    StatusText.Text = "Error: Mod name already exists in game folder.";
+                    mod.IsPlayable = true;
+                    mod.IsRunning = false;
+                    return;
+                }
+
+           
                 Directory.Move(originalModPath, targetModPath);
+
                 ProcessStartInfo startInfo = new ProcessStartInfo { FileName = gameExePath, WorkingDirectory = gameDirectory, UseShellExecute = false };
                 using (Process process = Process.Start(startInfo))
                 {
-                    if (process != null) { runningProcesses[mod] = process; StatusText.Text = $"Playing {mod.Title}..."; await process.WaitForExitAsync(); runningProcesses.Remove(mod); }
+                    if (process != null)
+                    {
+                        runningProcesses[mod] = process;
+                        StatusText.Text = $"Playing {mod.Title}...";
+                        await process.WaitForExitAsync();
+                        runningProcesses.Remove(mod);
+                    }
                 }
             }
-            catch (Exception ex) { StatusText.Text = $"Error: {ex.Message}"; runningProcesses.Remove(mod); }
+            catch (IOException ioEx)
+            {
+                StatusText.Text = $"File Error: Is the mod open in another program? ({ioEx.Message})";
+                runningProcesses.Remove(mod);
+            }
+            catch (Exception ex)
+            {
+                StatusText.Text = $"Error: {ex.Message}";
+                runningProcesses.Remove(mod);
+            }
             finally
             {
-                mod.IsRunning = false; StatusText.Text = "Game closed. Restoring mod folder...";
+                mod.IsRunning = false;
+                StatusText.Text = "Game closed. Restoring mod folder...";
+
                 if (Directory.Exists(targetModPath))
                 {
                     await Task.Delay(1000);
-                    try { Directory.Move(targetModPath, originalModPath); StatusText.Text = $"{mod.Title} closed and restored successfully."; }
-                    catch { StatusText.Text = $"WARNING: Could not automatically move {mod.Title} back."; }
+                    try
+                    {
+                        Directory.Move(targetModPath, originalModPath);
+                        StatusText.Text = $"{mod.Title} closed and restored successfully.";
+                    }
+                    catch (Exception ex)
+                    {
+                        StatusText.Text = $"WARNING: Could not automatically move {mod.Title} back. {ex.Message}";
+                    }
                 }
                 mod.IsPlayable = true;
             }
