@@ -269,7 +269,7 @@ namespace FNFVsliceLauncher
                             string jsonContent = await File.ReadAllTextAsync(metaFilePath);
                             var meta = JsonSerializer.Deserialize<PolymodMeta>(jsonContent);
 
-                            string iconPath = "ms-appx:///Assets/no_preview.png";
+                            string iconPath = "ms-appx:///Assets/no-preview.png";
 
                             if (File.Exists(iconFilePath))
                             {
