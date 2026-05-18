@@ -294,7 +294,7 @@ namespace FNFVsliceLauncher
             private delegate void InvokeFunctionDelegate(int phase);
             private global::System.Collections.Generic.Dictionary<string, InvokeFunctionDelegate> PendingFunctionBindings = new global::System.Collections.Generic.Dictionary<string, InvokeFunctionDelegate>();
 
-            private void Invoke_FNFVsliceLauncher_MainWindow_M_GetIconSymbol_3507208361(int phase)
+            private void Invoke_FNFVsliceLauncher_MainWindow_M_GetIconSymbol_2520795085(int phase)
             {
                 global::System.Boolean p0;
                 if (!TryGet_IsRunning(out p0)) { return; }
@@ -309,7 +309,7 @@ namespace FNFVsliceLauncher
                 }
             }
 
-            private void Invoke_FNFVsliceLauncher_MainWindow_M_GetButtonLabel_3507208361(int phase)
+            private void Invoke_FNFVsliceLauncher_MainWindow_M_GetButtonLabel_2520795085(int phase)
             {
                 global::System.Boolean p0;
                 if (!TryGet_IsRunning(out p0)) { return; }
@@ -360,8 +360,8 @@ namespace FNFVsliceLauncher
                         XamlBindingSetters.Set_Microsoft_UI_Xaml_FrameworkElement_Tag(this.obj16, obj, null);
                     }
                 }
-                this.Update_FNFVsliceLauncher_MainWindow_M_GetIconSymbol_3507208361(phase);
-                this.Update_FNFVsliceLauncher_MainWindow_M_GetButtonLabel_3507208361(phase);
+                this.Update_FNFVsliceLauncher_MainWindow_M_GetIconSymbol_2520795085(phase);
+                this.Update_FNFVsliceLauncher_MainWindow_M_GetButtonLabel_2520795085(phase);
                 this.CompleteUpdate(phase);
             }
             private void Update_IconPath(global::System.String obj, int phase)
@@ -388,26 +388,26 @@ namespace FNFVsliceLauncher
             }
             private void Update_IsRunning(global::System.Boolean obj, int phase)
             {
-                this.Update_FNFVsliceLauncher_MainWindow_M_GetIconSymbol_3507208361(phase);
-                this.Update_FNFVsliceLauncher_MainWindow_M_GetButtonLabel_3507208361(phase);
+                this.Update_FNFVsliceLauncher_MainWindow_M_GetIconSymbol_2520795085(phase);
+                this.Update_FNFVsliceLauncher_MainWindow_M_GetButtonLabel_2520795085(phase);
             }
-            private void Update_FNFVsliceLauncher_MainWindow_M_GetIconSymbol_3507208361(int phase)
+            private void Update_FNFVsliceLauncher_MainWindow_M_GetIconSymbol_2520795085(int phase)
             {
                 if ((phase & ((1 << 0) | NOT_PHASED | DATA_CHANGED)) != 0)
                 {
                     if (!isobj17SymbolDisabled)
                     {
-                        this.PendingFunctionBindings["FNFVsliceLauncher_MainWindow_M_GetIconSymbol_3507208361"] = new InvokeFunctionDelegate(this.Invoke_FNFVsliceLauncher_MainWindow_M_GetIconSymbol_3507208361); 
+                        this.PendingFunctionBindings["FNFVsliceLauncher_MainWindow_M_GetIconSymbol_2520795085"] = new InvokeFunctionDelegate(this.Invoke_FNFVsliceLauncher_MainWindow_M_GetIconSymbol_2520795085); 
                     }
                 }
             }
-            private void Update_FNFVsliceLauncher_MainWindow_M_GetButtonLabel_3507208361(int phase)
+            private void Update_FNFVsliceLauncher_MainWindow_M_GetButtonLabel_2520795085(int phase)
             {
                 if ((phase & ((1 << 0) | NOT_PHASED | DATA_CHANGED)) != 0)
                 {
                     if (!isobj18TextDisabled)
                     {
-                        this.PendingFunctionBindings["FNFVsliceLauncher_MainWindow_M_GetButtonLabel_3507208361"] = new InvokeFunctionDelegate(this.Invoke_FNFVsliceLauncher_MainWindow_M_GetButtonLabel_3507208361); 
+                        this.PendingFunctionBindings["FNFVsliceLauncher_MainWindow_M_GetButtonLabel_2520795085"] = new InvokeFunctionDelegate(this.Invoke_FNFVsliceLauncher_MainWindow_M_GetButtonLabel_2520795085); 
                     }
                 }
             }
